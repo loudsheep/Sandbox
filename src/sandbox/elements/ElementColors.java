@@ -77,7 +77,7 @@ public class ElementColors {
         return colorList[r.nextInt(colorList.length)];
     }
 
-//    public static Color getColorForElement(Element element, int x, int y) {
-//        return getColorForElement(element.getType());
-//    }
+    public static Color getColorForElement(Element element) {
+        return getColorForElement(element.getType());
+    }
 }

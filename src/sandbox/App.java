@@ -10,9 +10,7 @@ public class App extends PApplet {
     private long endTime;
     private float dt = -1f;
 
-    public App() {
-        super();
-    }
+    SandboxSimulation sandbox;
 
     @Override
     public void settings() {
@@ -21,6 +19,7 @@ public class App extends PApplet {
 
     @Override
     public void setup() {
+        sandbox = new SandboxSimulation(this, width, height, Settings.pixelSizeMod);
     }
 
     @Override
@@ -29,6 +28,7 @@ public class App extends PApplet {
 
         if (dt > 0) {
             // todo call simulation update
+            sandbox.update(dt);
         }
         endTime = System.currentTimeMillis();
         dt = (endTime - beginTime) / 1000f;
